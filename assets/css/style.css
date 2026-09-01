@@ -846,104 +846,113 @@ html, body {
 /* Section: Skills */
 .section-skills {
   background-color: #f6f6f6;
+  padding: 60px 0;
 }
 
 .section-skills h2 {
   position: relative;
   padding-bottom: 20px;
-  margin-bottom: 40px;
-  font-size: 18px;
+  margin-bottom: 20px;
+  font-size: 28px;
   color: #000;
   text-transform: uppercase;
-  text-align: left;
+  text-align: center;
 }
 
 .section-skills h2:before {
   content: '';
   position: absolute;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: block;
-  width: 40px;
-  height: 1px;
-  background-color: #000;
+  width: 60px;
+  height: 3px;
+  background-color: #196fc2;
 }
 
 .section-skills p {
   margin: 10px 0 0;
 }
 
-.progress-group p {
-  margin: 0;
+/* Skills Categories */
+.skills-category {
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skills-category h3 {
+  font-size: 16px;
+  color: #196fc2;
   text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
-.progress-group + .progress-group {
-  margin-top: 20px;
+.skills-category h3 i {
+  margin-right: 10px;
+  color: #196fc2;
 }
 
-.progress {
-  position: relative;
-  margin: 10px 0 0;
-  background-color: #666;
-  border-radius: 0;
-  height: 10px;
-  box-shadow: none;
-  overflow: visible;
+/* Skills Tags/Badges */
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.progress-bar {
-  position: relative;
+.skill-badge {
+  display: inline-block;
+  padding: 8px 16px;
   background-color: #196fc2;
-  height: 10px;
+  color: #ffffff;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease-in-out;
+  cursor: default;
+  box-shadow: 0 2px 5px rgba(25, 111, 194, 0.2);
 }
 
-.progress-bar:before {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: -10px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 15px 20px 15px;
-  border-color: transparent transparent #196fc2 transparent;
-  z-index: 2;
-}
-
-.progress-bar:after {
-  content: '';
-  position: absolute;
-  right: -8px;
-  top: -10px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 15px 20px 15px;
-  border-color: transparent transparent #f6f6f6 transparent;
-  z-index: 1;
-}
-
-.progress-bar span {
-  width: 40px !important;
-  position: absolute;
-  top: -30px;
-  right: -7px;
-  color: #000;
-  z-index: 3;
-}
-
-.progressbar-back-text {
-  display: none;
+.skill-badge:hover {
+  background-color: #1558a0;
+  box-shadow: 0 4px 8px rgba(25, 111, 194, 0.4);
+  transform: translateY(-2px);
 }
 
 @media only screen and (max-width: 767px) {
   /* Section: Skills */
-  .section-skills .col-sm-6 + .col-sm-6 {
-    margin-top: 40px;
+  .section-skills {
+    padding: 40px 0;
   }
+  
   .section-skills h2 {
-    margin-bottom: 20px;
-    font-size: 18px;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .skills-category {
+    margin-bottom: 30px;
+    padding: 20px;
+  }
+  
+  .skills-category h3 {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .skills-tags {
+    gap: 8px;
+  }
+  
+  .skill-badge {
+    padding: 6px 12px;
+    font-size: 11px;
   }
 }
 
@@ -1010,7 +1019,7 @@ html, body {
 }
 
 .section-services .col-sm-fifth {
-  width: 20%;
+  width: 14.285714%;
   display: table;
 }
 
@@ -1032,6 +1041,16 @@ html, body {
 
 .section-services .carousel-inner {
   margin-top: 75px;
+  min-height: 450px;
+}
+
+.section-services .carousel-inner .item {
+  display: none;
+  width: 100%;
+}
+
+.section-services .carousel-inner .item.active {
+  display: block;
 }
 
 .section-services .carousel-inner img {
