@@ -955,8 +955,6 @@ html, body {
     font-size: 11px;
   }
 }
-  }
-}
 
 /* Section: Counters */
 .site-section.section-counters {
@@ -2409,5 +2407,196 @@ textarea.form-control {
     top: -18px;
     height: 36px;
     width: 36px;
+  }
+}
+
+/* 
+ * Servicios en dos niveles (Fase 2)
+ */
+.service-tier {
+  margin-top: 60px;
+}
+
+.service-tier-title {
+  font-family: "Varela", sans-serif;
+  font-size: 20px;
+  color: #196fc2;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.service-tier-lead {
+  max-width: 720px;
+  margin: 15px auto 0;
+  text-align: center;
+  color: #666;
+}
+
+.service-tier-complementary .service-tier-title {
+  color: #666;
+}
+
+.service-card {
+  height: 100%;
+  margin-top: 30px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.service-card .rectangle {
+  margin: 0 auto 10px;
+}
+
+.service-card .rectangle i {
+  font-size: 28px;
+}
+
+.service-card h4 {
+  margin: 25px 0 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #196fc2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.service-card p {
+  margin: 20px 0 0;
+  font-size: 15px;
+}
+
+.service-audience {
+  padding: 12px 15px;
+  background-color: #f6f6f6;
+  border-left: 3px solid #196fc2;
+  border-radius: 3px;
+}
+
+.service-includes-title {
+  margin-top: 25px !important;
+  font-size: 13px !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.service-card ul {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  font-size: 15px;
+}
+
+.service-card ul li {
+  margin-bottom: 6px;
+}
+
+.service-card .btn {
+  margin-top: 28px;
+}
+
+/* 
+ * Fichas de caso dentro de los modales de proyecto (Fase 2)
+ */
+.case-block {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #e2e2e2;
+}
+
+.case-block:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.case-block h5 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #196fc2;
+}
+
+.case-block p {
+  margin: 6px 0 0;
+}
+
+.case-tech {
+  margin: 6px 0 0 !important;
+  font-size: 14px;
+  color: #666;
+}
+
+.case-tech span {
+  display: inline-block;
+  margin: 0 6px 6px 0;
+  padding: 3px 10px;
+  font-size: 13px;
+  color: #196fc2;
+  background-color: #f6f6f6;
+  border-radius: 12px;
+}
+
+/* 
+ * Solicitar cotizacion
+ */
+.cta-group {
+  margin-top: 30px;
+}
+
+.cta-group .btn {
+  margin: 6px;
+}
+
+.contact-email {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 18px;
+  word-break: break-all;
+}
+
+.contact-hint {
+  max-width: 640px;
+  margin: 30px auto 0;
+  text-align: left;
+}
+
+.contact-hint h4 {
+  margin: 0 0 15px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #196fc2;
+  text-align: center;
+}
+
+.contact-hint ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.contact-hint li {
+  margin-bottom: 8px;
+}
+
+@media only screen and (max-width: 991px) {
+  .service-tier {
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .service-card {
+    margin-top: 20px;
+    padding: 25px 20px;
+  }
+  .contact-hint {
+    margin-top: 25px;
   }
 }
