@@ -7,18 +7,16 @@ $(function () {
     });
 
     var $window = $(window);
-    function checkWidth() {
-        var windowsize = $window.width();
-        if (windowsize < 768) {
-            $('.nav a').on('click', function(){
-                $('.navbar-toggle').click() //bootstrap 3.x by Richard
-            });
-        }
+    function isMobile() {
+        return $window.width() < 768;
     }
-    // Execute on load
-    checkWidth();
-    // Bind event listener
-    $(window).resize(checkWidth);
+    // Cierra el menu movil al navegar. Se registra una sola vez para no
+    // duplicar el handler en cada resize.
+    $('.nav a').on('click', function(){
+        if (isMobile()) {
+            $('.navbar-toggle').click(); //bootstrap 3.x by Richard
+        }
+    });
 
 // Highlight the top nav as scrolling occurs
     $('body').scrollspy({
@@ -27,12 +25,17 @@ $(function () {
     });
 
 //jQuery for page scrolling feature - requires jQuery Easing plugin
+// Solo se interceptan las anclas internas (#id). Los enlaces externos o
+// mailto: se dejan pasar al comportamiento nativo del navegador.
     $(document).on('click', '.page-scroll a', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1000, 'easeInOutExpo');
+        var href = $(this).attr('href');
+        if (!href || href.charAt(0) !== '#') { return; }
+        var target = $(href);
+        if (!target.length) { return; }
         event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 1000, 'easeInOutExpo');
     });
 
 //Counters 
@@ -49,25 +52,6 @@ $(function () {
         });
     };
 
-
-// Progress bar 
-    var $section = $('.section-skills');
-    function loadDaBars() {
-        $('.progress .progress-bar').progressbar({
-            transition_delay: 500,
-            display_text: 'center'
-        });
-    }
-    
-    $(document).bind('scroll', function(ev) {
-        var scrollOffset = $(document).scrollTop();
-        var containerOffset = $section.offset().top - window.innerHeight;
-        if (scrollOffset > containerOffset) {
-            loadDaBars();
-            // unbind event not to load scrolsl again
-            $(document).unbind('scroll');
-        }
-    });
 
 //Team Carousel
     $('#services-carousel').carousel({ interval: false });
@@ -88,11 +72,6 @@ $(function () {
     }
 
 // Slick.js   
-    $('.review-carousel').slick({
-        nextArrow: '<button class="slick rectangle slick-next"><i class="fa fa-angle-right" aria-hidden="true"></button>',
-        prevArrow: '<button class="slick rectangle slick-prev"><i class="fa fa-angle-left" aria-hidden="true"></button>'
-    });
-
     $('.clients-carousel').slick({
         arrows: false,
         slidesToShow: 5,
@@ -199,14 +178,3 @@ $(function () {
       shuffleme.init(); //filter portfolio
     };
 }());
-
-
-    // Ejemplo de JavaScript para cambiar el nivel
-    const level = document.querySelector('.level');
-    const transitionGoal = 100; // Cambia esto según tu lógica
-    
-    if (transitionGoal < 40) {
-        level.textContent = 'Básico';
-    } else if (transitionGoal < 80) {
-        level.textContent = 'Intermedio';
-    } 
