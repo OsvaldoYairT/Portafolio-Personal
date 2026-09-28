@@ -1,299 +1,152 @@
-# 💼 Portafolio Personal - Osvaldo Torres
+# Portafolio Personal - Osvaldo Torres
 
-Portafolio web profesional de un Desarrollador Jr/Sr especializado en desarrollo web, análisis de datos y soluciones de software personalizadas.
+Sitio web estático que presenta los servicios de desarrollo web, sistemas y
+automatización de Osvaldo Torres, dirigido a pequeñas y medianas empresas.
 
----
-
-## 📋 Descripción General
-
-Este es un portafolio interactivo que showcasea proyectos, habilidades técnicas y servicios profesionales. El sitio presenta un diseño moderno y responsivo que se adapta perfectamente a todos los dispositivos.
-
-### 🎯 Propósito
-
-Demostrar experiencia y competencia en:
-- ✅ Desarrollo de aplicaciones web
-- ✅ Análisis y visualización de datos
-- ✅ Arquitectura de software y soluciones empresariales
-- ✅ Soporte técnico y mantenimiento
-- ✅ Presencia en redes sociales y branding
+No hay proceso de compilación ni dependencias que instalar: el sitio se abre
+directamente en el navegador o se sirve con cualquier servidor estático.
 
 ---
 
-## 🚀 Características Principales
-
-### 📱 Diseño Responsivo
-- Sitio completamente adaptable a cualquier resolución de pantalla
-- Navegación móvil inteligente con menú colapsable
-- Optimizado para dispositivos de escritorio, tablet y móvil
-
-### 🎨 Interfaz Moderna
-- Animaciones suaves y transiciones elegantes
-- Navegación de scroll automático entre secciones
-- Interfaz intuitiva y fácil de usar
-- Iconografía profesional con Font Awesome
-
-### ⚡ Funcionalidades Interactivas
-- **Barra de progreso animada**: Muestra el nivel de habilidad en diferentes tecnologías
-- **Contadores animados**: Estadísticas que se animan al entrar en vista
-- **Carrusel de equipo/servicios**: Navegación táctil compatible
-- **Navegación con Spy**: Resalta la sección actual mientras se navega
-- **Scroll suave**: Transiciones elegantes entre secciones
-
----
-
-## 📂 Estructura del Proyecto
+## Estructura del proyecto
 
 ```
-Portafolio Personal/
-├── index.html                 # Archivo principal HTML
-├── README.md                  # Este archivo
-├── assets/                    # Recursos del proyecto
-│   ├── css/
-│   │   ├── bootstrap.min.css  # Framework Bootstrap
-│   │   ├── font-awesome.min.css  # Iconos
-│   │   └── style.css          # Estilos personalizados
-│   ├── js/
-│   │   ├── jquery.min.js      # Librería jQuery
-│   │   ├── bootstrap.min.js   # Componentes Bootstrap
-│   │   ├── jquery.easing.min.js   # Animaciones suaves
-│   │   ├── jquery.countTo.min.js  # Contadores animados
-│   │   ├── bootstrap-progressbar.min.js  # Barras de progreso
-│   │   ├── jquery.shuffle.min.js  # Filtrado de galerías
-│   │   ├── slick.min.js       # Carrusel de imágenes
-│   │   ├── touchswipe.min.js  # Soporte táctil
-│   │   └── script.js          # Script personalizado
-│   ├── fonts/                 # Fuentes personalizadas
-│   └── img/                   # Imágenes y assets
-│       ├── icono.png
-│       ├── manifest.json
-│       └── browserconfig.xml
-├── css/                       # Acceso directo a estilos
-├── js/                        # Acceso directo a scripts
-├── fonts/                     # Fuentes del proyecto
-└── img/                       # Carpeta de imágenes
+.
+├── index.html          # Pagina principal en español
+├── index-en.html       # Version en ingles
+├── css/
+│   ├── bootstrap.min.css
+│   ├── font-awesome.min.css
+│   └── style.css       # Estilos propios del sitio (unico CSS cargado por las paginas)
+├── js/
+│   ├── jquery.min.js
+│   ├── bootstrap.min.js
+│   ├── jquery.countTo.min.js
+│   ├── jquery.easing.min.js
+│   ├── jquery.shuffle.min.js
+│   ├── slick.min.js
+│   ├── touchswipe.min.js
+│   └── script.js       # Logica propia: navegacion, contadores, carrusel y filtros
+├── img/                # Imagenes usadas por las paginas
+├── docs/               # Plan de mejoras por fases
+├── assets/             # Copia antigua sin usar, ver "Pendientes"
+└── README.md
 ```
 
----
-
-## 🛠️ Tecnologías Utilizadas
-
-### 🌐 Frontend
-- **HTML5**: Estructura semántica y moderna
-- **CSS3**: Estilos personalizados y responsive
-- **Bootstrap 3**: Framework de diseño responsivo
-- **jQuery**: Manipulación del DOM y animaciones
-- **Font Awesome 5**: Iconografía profesional
-- **Google Fonts**: Tipografías custom (Open Sans, Varela)
-
-### 📦 Librerías Incluidas
-- `jquery.easing.min.js` - Funciones de animación avanzadas
-- `jquery.countTo.min.js` - Contadores animados con número
-- `bootstrap-progressbar.min.js` - Barras de progreso dinámicas
-- `jquery.shuffle.min.js` - Filtrado y reorganización de contenido
-- `slick.min.js` - Carrusel/slider responsivo
-- `touchswipe.min.js` - Soporte gestos táctiles
+Las dos paginas son estructuralmente identicas: cualquier cambio en
+`index.html` debe replicarse en `index-en.html` y viceversa.
 
 ---
 
-## 📋 Secciones del Portafolio
+## Secciones del sitio
 
-### 🏠 Home
-- Héroe con presentación principal
-- Descripción de rol y especialidad
-- Llamada a acción hacia el siguiente contenido
+El orden esta pensado para un recorrido de venta:
 
-### 👋 Intro
-- Compromisos profesionales principales:
-  - **Uso de Lenguajes Adecuados**: Selección inteligente de tecnologías según proyecto
-  - **Capacitación Constante**: Actualización permanente en nuevas tecnologías
-  - **Control de Calidad**: Pruebas exhaustivas en todos los navegadores
-  - **Detalles que Importan**: Enfoque en UX y diseño intuitivo
-
-### 📌 About
-Tipos de proyectos y servicios ofrecidos:
-- 🗄️ **Proyectos de Datos**: Análisis y visualización de información
-- 💻 **Desarrollo Web**: Sitios web funcionales y personalizados
-- 🔧 **Soporte Técnico**: Mantenimiento y asistencia continua
-- 📱 **Redes Sociales**: Gestión de marca y presencia digital
-
-### 💪 Skills (Habilidades Técnicas)
-Matriz completa de competencias con indicadores de nivel:
-
-**Lenguajes POO**
-- C# (Intermedio)
-- VB.NET (Intermedio)
-- JavaScript (Básico)
-- Python (Básico)
-- Java (Intermedio)
-
-**Frontend**
-- HTML (Intermedio)
-- CSS (Intermedio)
-- Bootstrap (Intermedio)
-- jQuery (Básico)
-- AJAX (Intermedio)
-
-**Bases de Datos**
-- SQL Server (Intermedio)
-- Oracle (Intermedio)
-- MySQL (Intermedio)
-
-**Backend y Arquitectura**
-- ADO.NET (Intermedio)
-- ASP.NET MVC (Intermedio)
-- APIs (Intermedio)
-- Web Services (Intermedio)
-
-**Reporting**
-- Reporting Services (Intermedio)
-- Crystal Reports (Intermedio)
-- Power BI (Básico)
-
-**DevOps y Control de Versiones**
-- GitHub / GitHub Desktop (Intermedio)
-- TFS (Intermedio)
-- Docker (Básico)
-
-**IDEs**
-- Visual Studio Code (Intermedio)
-- Visual Studio (Intermedio)
-- IntelliJ IDEA (Básico)
-- PyCharm (Básico)
-
-**Herramientas de Diseño**
-- Photoshop (Intermedio)
-- Lightroom (Intermedio)
-- Canva (Intermedio)
-- Edición de Video (Intermedio)
-- Fotografía (Intermedio)
-
-**Cloud**
-- Google Cloud (Intermedio)
-
-### 📊 Counters
-Estadísticas que se animan al entrar en vista
-
-### 👥 Team
-Equipo de trabajo o testimonios
-
-### 📜 History
-Línea temporal de experiencia laboral
-
-### 🎨 Works
-Galería de proyectos realizados con filtrado
-
-### 📞 Contact
-Formulario de contacto para consultas
+1. **Portada** - cargo, propuesta de valor y llamadas a la accion.
+2. **Servicios** - oferta principal (desarrollo web, sistemas y bases de datos,
+   automatizacion e integracion) y servicios complementarios (soporte y
+   mantenimiento, contenido visual, redes sociales). Cada servicio indica para
+   quien es, que incluye y como solicitarlo.
+3. **Trabajos** - 11 proyectos filtrables. Cada tarjeta abre una ficha con
+   cliente, descripcion, problema, solucion, tecnologias y, cuando existe, un
+   enlace a la demo.
+4. **Empresas** - logos de clientes y agencias.
+5. **Contadores** - cifras de experiencia.
+6. **Principios de trabajo** - como se trabaja.
+7. **Equipo** - colaborador con autorizacion para aparecer.
+8. **Acerca de** - biografia.
+9. **Tecnologias y herramientas** - stack tecnologico.
+10. **Historia** - trayectoria profesional, como respaldo.
+11. **Contacto** - correo, formulario e indicacion de que datos conviene enviar.
 
 ---
 
-## 🎯 Características Destacadas
+## Como verlo en local
 
-### ✨ Animaciones Inteligentes
-- Barra de progreso que se anima cuando entra en vista
-- Contadores numéricos que cuentan hacia el valor final
-- Transiciones suaves en todos los enlaces y botones
-- Carrusel con soporte táctil y gestos
+Abrir `index.html` directamente funciona, pero para probar los enlaces y el
+formulario conviene servirlo:
 
-### 🔍 Optimización SEO
-- Meta tags completos para descripción
-- Viewport configurado para responsive design
-- Apple touch icons para dispositivos iOS
-- Manifest.json para PWA
+```bash
+# Con Python
+python -m http.server 8000
 
-### 📱 Adaptabilidad
-- Navbar que se oculta al clickear en mobile
-- Menú colapsable Bootstrap
-- Grid system responsivo
-- Imágenes optimizadas
+# O con Node
+npx serve .
+```
+
+Luego abrir `http://localhost:8000`.
 
 ---
 
-## 🚀 Cómo Utilizar
+## Personalizacion
 
-### Instalación
-1. **Clonar o descargar** el repositorio
-2. **Abrir** `index.html` en un navegador web moderno
-3. ¡No requiere instalación de dependencias adicionales!
+| Que cambiar | Donde |
+|---|---|
+| Nombre, cargo y textos del encabezado | `index.html` y `index-en.html`, bloque `#top` |
+| Servicios y sus detalles | Seccion `#services` |
+| Proyectos y fichas | Seccion `#works` y los modales `portfolioItem*` |
+| Colores y espaciados | `css/style.css` (color principal `#196fc2`) |
+| Correo de contacto | Buscar `osvaldoyts20@gmail.com` en ambas paginas |
+| Formulario | Enlace a Google Forms en la seccion `#contact` |
+| Metadatos de redes | Bloque Open Graph en el `<head>` de ambas paginas |
 
-### Requisitos
-- Navegador web moderno (Chrome, Firefox, Safari, Edge)
-- Conexión a Internet (para Google Fonts y CDNs)
-
-### Personalización
-Para personalizar el portafolio:
-
-1. **Contenido HTML**: Editar `index.html` con tu información
-2. **Estilos**: Modificar `assets/css/style.css`
-3. **Scripts**: Ajustar `assets/js/script.js` según necesidad
-4. **Imágenes**: Reemplazar archivos en `assets/img/`
+Al agregar un proyecto hay que crear la tarjeta **y** su modal, y el `id` del
+modal debe coincidir con el `data-target` de la tarjeta.
 
 ---
 
-## 📁 Archivos CSS Personalizados
+## Reglas del proyecto
 
-### style.css
-Contiene los estilos personalizados del portafolio incluyendo:
-- Resets y estilos base
-- Colores corporativos (azul #196fc2)
-- Componentes personalizados (rectángulos, botones)
-- Estilos responsivos
-- Animaciones personalizadas
-
----
-
-## 🎨 Paleta de Colores
-
-- **Azul Principal**: `#196fc2`
-- **Blanco**: `#ffffff`
-- **Fuente**: Open Sans, Varela sans-serif
+- No inventar precios, metricas, testimonios, resultados ni disponibilidad.
+- Todo lo publicado debe poder respaldarse con evidencia real.
+- Mantener el sitio estatico. No agregar backend, CMS, pagos ni cambiar de
+  framework sin una necesidad concreta.
+- Cualquier contenido visible en `index.html` debe existir tambien en
+  `index-en.html`.
 
 ---
 
-## 📱 Compatibilidad
+## Accesibilidad
 
-✅ Chrome (últimas versiones)
-✅ Firefox (últimas versiones)
-✅ Safari (últimas versiones)
-✅ Edge (últimas versiones)
-✅ Dispositivos móviles (iOS y Android)
-✅ Tablets (iPad, Android tablets)
-
----
-
-## 📞 Contacto
-
-Para más información o consultas, usar el formulario de contacto disponible en la sección **#contact** del portafolio.
+- Enlace de salto al contenido principal en ambas paginas.
+- Foco de teclado visible mediante `:focus-visible` (el tema base eliminaba el
+  indicador de foco con `outline: 0`).
+- Todos los enlaces que solo contienen un icono tienen `aria-label`.
+- Los enlaces que abren en pestaña nueva usan `rel="noopener noreferrer"`.
+- Las imagenes decorativas usan `alt=""`; las informativas describen su
+  contenido.
 
 ---
 
-## 📄 Licencia
+## Publicacion
 
-Proyecto personal - Derechos reservados © 2024 Osvaldo Torres
+El repositorio esta en `github.com/OsvaldoYairT/Portafolio-Personal` y se
+publica con GitHub Pages. La URL base es:
 
----
+```
+https://osvaldoyairt.github.io/Portafolio-Personal/
+```
 
-## 🎓 Notas Técnicas
-
-### Optimización
-- Imágenes optimizadas para web
-- CSS y JavaScript minificados
-- Carga eficiente de recursos
-- Navegación suave con AJAX
-
-### Mejoras Futuras
-- [ ] Implementar formulario de contacto funcional
-- [ ] Agregar más proyectos a la galería
-- [ ] Integrar sistema de comentarios
-- [ ] Optimizar performance con lazy loading
-- [ ] Agregar modo oscuro
-
-### Performance
-- Load time optimizado
-- Animaciones GPU-aceleradas
-- Eventos scroll optimizados
-- Caché de navegador
+La version en ingles queda en `index-en.html` dentro de la misma ruta.
 
 ---
 
-**Hecho con ❤️ por Osvaldo Torres**
+## Pendientes
+
+- Confirmar la configuracion de la rama de publicacion de GitHub Pages: el
+  repositorio no tiene rama `gh-pages` ni flujo de trabajo, y la rama activa
+  localmente es `develop` mientras `origin/HEAD` apunta a `master`.
+- Falta una imagen de vista previa de 1200x630 px para Open Graph. No hay
+  ninguna captura del sitio en `img/`.
+- `assets/` es una copia antigua sin referencias desde las paginas (61
+  archivos, ~5.16 MB). Se conserva por decision del autor, pero se puede
+  eliminar.
+- Las imagenes no usan `loading="lazy"`, lo que penaliza la carga inicial.
+- Falta un texto alternativo para `img/client-6.png`: se desconoce a qué
+  empresa corresponde ese logo.
+
+---
+
+## Contacto
+
+Osvaldo Torres - `osvaldoyts20@gmail.com`

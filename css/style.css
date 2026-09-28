@@ -2346,6 +2346,7 @@ textarea.form-control {
 
 .modal-header {
   height: 400px;
+  max-height: 38vh;
 }
 
 .modal-header .rectangle {
@@ -2398,9 +2399,10 @@ textarea.form-control {
 }
 
 @media only screen and (max-width: 767px) {
-  /* MODALS */
+  /* MODALS: margen simetrico. El lado derecho reserva espacio porque el
+   boton de cerrar sobresale 24px del borde (right: -24px). */
   .modal-dialog {
-    margin: 30px 30px 10px 10px;
+    margin: 16px 30px 16px 16px;
   }
   .modal-header .rectangle {
     right: -18px;
@@ -2598,5 +2600,314 @@ textarea.form-control {
   }
   .contact-hint {
     margin-top: 25px;
+  }
+}
+
+/* 
+ * Accesibilidad: foco visible y enlace de salto (Fase 3, P3.4)
+ * El tema original aplica "outline: 0 none" a los enlaces, lo que oculta
+ * por completo el indicador de foco al navegar con teclado.
+ */
+
+/* Enlace de salto: solo visible cuando recibe foco */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  z-index: 2000;
+  padding: 12px 20px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #196fc2;
+  border-bottom-right-radius: 4px;
+  transition: top 0.2s ease-in-out;
+}
+
+.skip-link:focus {
+  top: 0;
+  color: #ffffff;
+  background-color: #196fc2;
+}
+
+/* Foco visible con teclado en enlaces, botones y controles */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible,
+.slick-list:focus-visible {
+  outline: 3px solid #ffb400;
+  outline-offset: 2px;
+}
+
+/* En zonas oscuras (hero, CTA, redes) el contorno debe ser claro */
+.hero a:focus-visible,
+.section-me a:focus-visible,
+.section-quote a:focus-visible,
+.section-networks a:focus-visible,
+.blue-bg a:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Los botones del tema cambian de color al enfocar; se fuerza el estado */
+.btn:focus-visible {
+  color: #ffffff;
+  background-color: #196fc2;
+  border-color: #ffb400;
+  box-shadow: none;
+}
+
+.btn-inverted:focus-visible {
+  color: #196fc2;
+  background-color: #ffffff;
+  border-color: #ffb400;
+}
+
+/* Al usar el raton no se dibuja el contorno */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* El rectangulo de cerrar ficha y el boton + son pequenos: ampliar el area */
+.modal-header .rectangle:focus-visible,
+.portfolio-item-thumb .rectangle:focus-visible {
+  outline-width: 3px;
+  outline-offset: 3px;
+}
+
+/* Respetar preferencia de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* 
+ * Jerarquia visual, tipografia y espaciado (Fase 3, P3.1)
+ * Ajustes superpuestos al tema base. No se tocan los tamanos de imagen que
+ * el tema ya define con .img-res, para no romper los recortes existentes.
+ */
+
+/* Ritmo vertical consistente entre secciones */
+.site-section {
+  padding: 90px 0;
+}
+
+@media only screen and (max-width: 991px) {
+  .site-section {
+    padding: 70px 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .site-section {
+    padding: 50px 0;
+  }
+}
+
+/* Escala de titulos: una sola regla para TODOS los titulos de seccion.
+   Antes solo cubria a .site-section, y .section-history (22px, Open Sans,
+   peso 300, sin mayusculas) y .section-me (Open Sans, sin mayusculas) se
+   quedaban fuera, por lo que se veian distintos al resto. Se incluyen
+   tambien las secciones que no llevan la clase .site-section.
+   El color se mantiene por seccion: azul de marca, blanco sobre fondo
+   oscuro en el CTA y negro en habilidades, que ademas lleva su subrayado. */
+.site-section h2,
+.section-history h2,
+.section-me h2 {
+  font-family: "Varela", sans-serif;
+  font-size: 30px;
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #196fc2;
+}
+
+.section-diff-title h2,
+.section-me h2 {
+  font-weight: 400;
+}
+
+.section-history h2 {
+  color: #196fc2;
+}
+
+.section-me h2 {
+  color: #ffffff;
+}
+
+.section-skills h2 {
+  font-size: 30px;
+  color: #000000;
+}
+
+@media only screen and (max-width: 767px) {
+  .site-section h2,
+  .section-history h2,
+  .section-me h2,
+  .section-skills h2 {
+    font-size: 23px;
+  }
+}
+
+/* El subtitulo lleva dos lineas decorativas de 20px a los lados, ambas
+   posicionadas con top: 50% respecto a la caja del texto. La regla general
+   de interlineado (.site-section p) tiene mayor especificidad que
+   .section-subtitle, asi que el subtitulo heredaba line-height 1.7 y esas
+   lineas dejaban de caer a la altura del texto. Se le fija el alto de linea
+   del tema para que el adorno y el texto queden centrados juntos. */
+.site-section p.section-subtitle {
+  line-height: 16px;
+}
+
+@media only screen and (max-width: 767px) {
+  .site-section p.section-subtitle {
+    line-height: 18px;
+  }
+}
+
+/* Interlineado del cuerpo de texto */
+.site-section p,
+.site-section li {
+  line-height: 1.7;
+}
+
+.site-section h3,
+.site-section h4,
+.service-card h4 {
+  line-height: 1.35;
+}
+
+/* 
+ * Areas tactiles: los botones que solo llevan icono deben acercarse a
+ * 44x44 px para poder activarse con el dedo.
+ */
+.modal-header .rectangle,
+.social-icons a.rectangle,
+.section-networks a.rectangle {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-header .rectangle {
+  right: -24px;
+  top: -24px;
+}
+
+/* Botones principales: altura comoda y ancho completo en movil */
+.btn {
+  padding: 12px 26px;
+  font-size: 15px;
+  line-height: 1.4;
+  border-radius: 3px;
+}
+
+@media only screen and (max-width: 767px) {
+  .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .cta-group .btn {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .contact-email {
+    font-size: 16px;
+  }
+}
+
+/* Filtros del portafolio.
+   Se conservan intactos los estilos originales del tema (padding horizontal
+   de 30px, borde separador y estado activo con fondo azul y texto blanco).
+   Sobrescribirlos dejaba el filtro activo con texto azul sobre fondo azul
+   y los separadores de 1px pegados a las etiquetas. */
+.portfolio-sorting li a {
+  cursor: pointer;
+}
+
+/* En pantallas tactiles no existe :hover, por lo que el panel con el titulo
+   y la descripcion nunca se mostraba y los proyectos quedaban sin nombre
+   visible. Se aplica el mismo aspecto del hover de forma permanente. */
+@media (hover: none) {
+  .portfolio-item .portfolio-item-thumb {
+    transform: translateY(-75px);
+    -webkit-transform: translateY(-75px);
+    -ms-transform: translateY(-75px);
+  }
+  .portfolio-item .portfolio-info {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .portfolio-item .portfolio-item-thumb:after {
+    opacity: 0.8;
+  }
+  .portfolio-item .portfolio-item-thumb .rectangle {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Fichas de proyecto: el titulo no debe quedar pegado al borde.
+   Bootstrap fija .modal-body en 400px; sumados al encabezado la ficha
+   media 800px y se cortaba en pantallas bajas. El alto se limita en
+   proporcion a la ventana y el cuerpo sigue desplazandose por dentro. */
+.modal-body {
+  padding-top: 18px;
+  max-height: 44vh;
+}
+
+@media only screen and (max-width: 767px) {
+  .modal-header {
+    max-height: 30vh;
+  }
+  .modal-body {
+    padding-left: 18px;
+    padding-right: 18px;
+    max-height: 40vh;
+  }
+  .case-tech span {
+    font-size: 12px;
+    margin: 0 4px 6px 0;
+  }
+}
+
+/* En pantallas angostas las tarjetas de servicio se apilan completas */
+@media only screen and (max-width: 767px) {
+  .service-tier-lead {
+    font-size: 15px;
+  }
+  .service-card ul {
+    font-size: 14px;
+  }
+}
+
+/* Respetar preferencia de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .portfolio-item,
+  .portfolio-item-thumb,
+  .portfolio-item-thumb:after,
+  .skill-badge,
+  .skip-link,
+  .btn,
+  .flipper,
+  .main-service {
+    transition: none !important;
   }
 }
