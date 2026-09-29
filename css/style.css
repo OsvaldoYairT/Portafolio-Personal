@@ -2911,3 +2911,557 @@ button:focus:not(:focus-visible) {
     transition: none !important;
   }
 }
+
+/* ==========================================================================
+   FASE 3 - Bloques nuevos: proceso, que incluye y preguntas frecuentes
+   Reutilizan los tokens del tema (azul #196fc2, gris #f6f6f6, Varela +
+   Open Sans, tarjetas con radio 5px y sombra suave). No se modifican las
+   reglas existentes, todo se anade al final para que hereden el diseno.
+   ========================================================================== */
+
+/* --- Proceso: pasos del proyecto --- */
+.section-process {
+  background-color: #ffffff;
+}
+
+.process-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px -12px 0;
+}
+
+.process-step {
+  flex: 0 0 20%;
+  max-width: 20%;
+  padding: 0 12px;
+  text-align: center;
+}
+
+.process-step .rectangle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto;
+  background-color: #196fc2;
+  color: #ffffff;
+  font-family: "Varela", sans-serif;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.process-step h3 {
+  margin: 20px 0 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.process-step p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #666666;
+}
+
+/* --- Que incluye: tarjetas de entregables --- */
+.section-includes {
+  background-color: #f6f6f6;
+}
+
+.section-includes .include-card {
+  height: 100%;
+  margin-top: 30px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-includes .include-card .rectangle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #196fc2;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.section-includes .include-card h3 {
+  margin: 18px 0 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.section-includes .include-card p {
+  margin: 10px 0 0;
+  font-size: 15px;
+  color: #666666;
+}
+
+/* --- Preguntas frecuentes: acordeon nativo con details/summary ---
+   Se usa details en lugar de un acordeon con JavaScript porque ya es
+   accesible por teclado y funciona sin scripting. */
+.section-faq {
+  background-color: #ffffff;
+}
+
+.faq-list {
+  max-width: 900px;
+  margin: 50px auto 0;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.faq-question {
+  position: relative;
+  padding: 20px 55px 20px 25px;
+  font-family: "Varela", sans-serif;
+  font-size: 18px;
+  color: #196fc2;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+/* El signo + indica que la respuesta esta cerrada */
+.faq-question:before {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  margin-top: -14px;
+  color: #196fc2;
+  font-family: "Open Sans", sans-serif;
+  font-size: 26px;
+  line-height: 28px;
+}
+
+/* Al abrirse, el signo pasa a menos */
+.faq-item[open] .faq-question:before {
+  content: '\2212';
+}
+
+.faq-answer {
+  padding: 0 25px 22px;
+}
+
+.faq-answer p {
+  margin: 0;
+  font-size: 15px;
+  color: #666666;
+}
+
+/* --- Adaptacion a pantallas menores --- */
+@media only screen and (max-width: 991px) {
+  .process-step {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .process-grid {
+    margin: 40px -12px 0;
+  }
+
+  .process-step {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 35px;
+  }
+
+  .faq-question {
+    padding: 18px 50px 18px 20px;
+    font-size: 17px;
+  }
+
+  .faq-answer {
+    padding: 0 20px 20px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .process-step {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .section-includes .include-card {
+    padding: 25px;
+  }
+}
+
+/* ==========================================================================
+   Aviso de privacidad / Privacy notice
+   Paginas secundarias que reutilizan los tokens del tema.
+   ========================================================================== */
+
+.legal-body {
+  background-color: #ffffff;
+}
+
+/* Cabecera reducida: solo marca y vuelta atras, sin el nav completo */
+.legal-header {
+  padding: 30px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.legal-header .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.legal-brand {
+  margin: 0;
+  font-family: "Varela", sans-serif;
+  font-size: 20px;
+  color: #196fc2;
+  text-transform: uppercase;
+}
+
+.legal-back {
+  font-size: 13px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.legal-back:hover,
+.legal-back:focus {
+  color: #196fc2;
+}
+
+.legal-back i {
+  margin-right: 4px;
+}
+
+/* Contenido */
+.legal-page {
+  padding: 60px 0 80px;
+  max-width: 780px;
+}
+
+.legal-page h1 {
+  margin: 0;
+  font-family: "Varela", sans-serif;
+  font-size: 32px;
+  color: #196fc2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.legal-updated {
+  margin: 15px 0 0;
+  font-size: 14px;
+  color: #999;
+  text-align: center;
+}
+
+.legal-page h2 {
+  margin: 45px 0 0;
+  padding-bottom: 10px;
+  font-family: "Varela", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #196fc2;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.legal-page p,
+.legal-page li {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.legal-page p {
+  margin: 18px 0 0;
+}
+
+.legal-page ul {
+  margin: 15px 0 0;
+  padding-left: 22px;
+}
+
+.legal-page li {
+  margin-bottom: 8px;
+}
+
+.legal-page a {
+  color: #196fc2;
+}
+
+.legal-note {
+  padding: 15px 20px;
+  background-color: #f6f6f6;
+  border-left: 3px solid #196fc2;
+  border-radius: 3px;
+}
+
+.legal-notice {
+  margin-top: 35px;
+  padding: 20px;
+  background-color: #fff8e5;
+  border: 1px solid #f0d68a;
+  border-radius: 5px;
+}
+
+.legal-notice p {
+  margin: 0;
+  font-size: 14px;
+  color: #7a5c00;
+}
+
+/* Marca los datos que el propietario debe confirmar antes de publicar */
+.legal-placeholder {
+  display: inline-block;
+  padding: 1px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #a94442;
+  background-color: #fdecea;
+  border: 1px dashed #d9534f;
+  border-radius: 3px;
+}
+
+/* Pie reducido */
+.legal-footer {
+  padding: 35px 0;
+  text-align: center;
+  border-top: 1px solid #f0f0f0;
+}
+
+.legal-links {
+  margin: 0;
+}
+
+.legal-links a {
+  margin: 0 10px;
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.legal-links a:hover,
+.legal-links a:focus {
+  color: #196fc2;
+}
+
+.legal-footer .copyright {
+  margin: 15px 0 0;
+  font-size: 12px;
+  color: #999;
+}
+
+@media only screen and (max-width: 767px) {
+  .legal-page {
+    padding: 40px 15px 60px;
+  }
+  .legal-page h1 {
+    font-size: 25px;
+  }
+  .legal-page h2 {
+    font-size: 18px;
+    margin-top: 35px;
+  }
+  .legal-page p,
+  .legal-page li {
+    font-size: 14px;
+  }
+  .legal-header .container {
+    text-align: center;
+  }
+  .legal-brand {
+    margin-bottom: 8px;
+  }
+}
+
+/* ==========================================================================
+   Ajustes de espaciado, ficha de proyecto y ficha de equipo
+   ========================================================================== */
+
+/* --- 1. Espacio inferior de los servicios complementarios ---
+   .section-services.site-section tiene padding: 0 (regla original del tema,
+   de mayor especificidad que .site-section), asi que la ultima fila de
+   tarjetas terminaba justo en el cambio de fondo gris a blanco y se leia
+   pegada a "Trabajos realizados". Se devuelve aire solo por abajo, sin
+   tocar el bloque superior del carrusel. */
+.section-services.site-section {
+  padding-bottom: 70px;
+}
+
+@media only screen and (max-width: 991px) {
+  .section-services.site-section {
+    padding-bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .section-services.site-section {
+    padding-bottom: 35px;
+  }
+}
+
+/* --- 2. Ficha de proyecto: todo el texto dentro del cuadro blanco ---
+   Bootstrap no aplica overflow a .modal-body. Al limitar su alto con
+   max-height, el contenido se salia del fondo blanco de .modal-content
+   (el bloque "Tecnologias utilizadas" se veia transparente) y para leerlo
+   habia que desplazar la pagina. Se convierte la ficha en una columna
+   flex: cabecera fija, cuerpo con scroll propio y conjunto dentro de la
+   ventana. min-height: 0 es imprescindible para que el cuerpo encoja. */
+.modal.fade-scale .modal-dialog {
+  display: flex;
+  flex-direction: column;
+  max-height: 88vh;
+  margin-bottom: 20px;
+}
+
+.modal.fade-scale .modal-content {
+  display: flex;
+  flex-direction: column;
+  max-height: 88vh;
+  overflow: hidden;
+}
+
+.modal.fade-scale .modal-header {
+  flex: 0 0 auto;
+  height: 400px;
+  max-height: 30vh;
+}
+
+.modal.fade-scale .modal-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  /* El alto lo controla ahora la columna flex del dialog (88vh), no un
+     max-height fijo: los topes 44vh / 40vh que venian del tema dejaban
+     hueco muerto bajo el texto. */
+  max-height: none;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 18px;
+  padding-bottom: 22px;
+}
+
+/* Las etiquetas de tecnologia dejan de pegarse al borde al ajustar el ancho */
+.modal.fade-scale .case-tech span {
+  margin-bottom: 6px;
+}
+
+@media only screen and (max-width: 767px) {
+  .modal.fade-scale .modal-dialog,
+  .modal.fade-scale .modal-content {
+    max-height: 90vh;
+  }
+  .modal.fade-scale .modal-header {
+    max-height: 24vh;
+  }
+}
+
+/* --- 3. Ficha de equipo: ver el reverso tambien sin hover ---
+   El giro dependia de :hover, que no existe en pantallas tactiles, asi
+   que el nombre, el puesto, la biografia y el LinkedIn quedaban
+   inaccesibles en movil. Se anade un boton que voltea la ficha y funciona
+   con raton, dedo y teclado. */
+.team-member-front {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-member-front .team-member-thumb {
+  flex: 0 0 auto;
+}
+
+.team-member-front-name {
+  flex: 0 0 auto;
+}
+
+.team-flip-btn {
+  flex: 0 0 auto;
+  display: block;
+  width: calc(100% - 24px);
+  margin: 14px auto 16px;
+  padding: 9px 14px;
+  font-family: "Varela", sans-serif;
+  font-size: 13px;
+  color: #196fc2;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  border: 1px solid #196fc2;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.team-flip-btn i {
+  margin-right: 6px;
+}
+
+.team-flip-btn:hover,
+.team-flip-btn:focus {
+  color: #ffffff;
+  background-color: #196fc2;
+}
+
+/* El reverso va sobre fondo azul, asi que el boton se invierte */
+.team-flip-btn.team-flip-back {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #ffffff;
+}
+
+.team-flip-btn.team-flip-back:hover,
+.team-flip-btn.team-flip-back:focus {
+  color: #196fc2;
+  background-color: #ffffff;
+}
+
+@media only screen and (max-width: 767px) {
+  .team-flip-btn {
+    width: calc(100% - 16px);
+    margin: 10px auto 12px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+/* --- Estado volteado de la ficha de equipo ---
+   Clase que alterna el boton .js-team-flip. Convive con el :hover del
+   escritorio: si la tarjeta ya esta volteada por clic o por dedo, el hover
+   no la devuelve, asi que el boton "Volver a la foto" siempre funciona. */
+.team-member.is-flipped .flipper {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+}
+
+.team-member.is-flipped .team-member-front {
+  pointer-events: none;
+}
+
+/* Sin transicion al abrir con el dedo: el retardo de 0.6s hacia que el
+   usuario ya haya soltado el boton */
+@media (hover: none) {
+  .team-member .flipper,
+  .team-member .team-member-front,
+  .team-member .team-member-back {
+    transition: none;
+  }
+}

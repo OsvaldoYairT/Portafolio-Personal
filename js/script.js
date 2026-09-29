@@ -159,4 +159,24 @@ $(function () {
     if($('#grid').length >0 ) { 
       shuffleme.init(); //filter portfolio
     };
-}());
+
+    // Ficha de equipo
+    // El giro de la tarjeta dependia de :hover, que no existe en pantallas
+    // tactiles, asi que el reverso (puesto, biografia y LinkedIn) era
+    // inalcanzable en movil. El boton .js-team-flip alterna una clase que
+    // el CSS ya conoce, y funciona con raton, dedo y teclado.
+    $('.js-team-flip').on('click', function (event) {
+        event.preventDefault();
+        var $btn = $(this),
+            $member = $btn.closest('.team-member');
+
+        if (!$member.length) {
+            return;
+        }
+
+        var isFlipped = $member.hasClass('is-flipped');
+        $member.toggleClass('is-flipped', !isFlipped);
+        $member.find('.js-team-flip').attr('aria-expanded', isFlipped ? 'false' : 'true');
+    });
+
+    }());
